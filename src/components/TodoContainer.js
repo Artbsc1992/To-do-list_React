@@ -1,6 +1,7 @@
 import React from 'react';
 import TodosList from './TodoList';
 import Header from './Header';
+import InputTodo from './InputTodo';
 // eslint-disable-next-line react/prefer-stateless-function
 class TodoContainer extends React.Component {
     state = {
@@ -45,10 +46,22 @@ class TodoContainer extends React.Component {
       });
     }
 
+    addTodoItem = (title) => {
+      const newTodo = {
+        id: 4,
+        title,
+        completed: false,
+      };
+      this.setState({
+        todos: [...this.state.todos, newTodo],
+      });
+    };
+
     render() {
       return (
         <div>
           <Header />
+          <InputTodo addTodoProps={this.addTodoItem} />
           <TodosList
             todos={this.state.todos}
             handleChangeProps={this.handleChange}

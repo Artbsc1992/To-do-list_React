@@ -5,6 +5,12 @@ import Header from './Header';
 import InputTodo from './InputTodo';
 // eslint-disable-next-line react/prefer-stateless-function
 const TodoContainer = () => {
+  function getInitialTodos() {
+    // getting stored items
+    const temp = localStorage.getItem('todos');
+    const savedTodos = JSON.parse(temp);
+    return savedTodos || [];
+  }
   const [todos, setTodos] = useState(getInitialTodos());
 
   const handleChange = (id) => {
@@ -37,10 +43,11 @@ const TodoContainer = () => {
   const setUpdate = (updatedTitle, id) => {
     setTodos(
       todos.map((todo) => {
-        if (todo.id === id) {
-          todo.title = updatedTitle;
+        const Todo = todo;
+        if (Todo.id === id) {
+          Todo.title = updatedTitle;
         }
-        return todo;
+        return Todo;
       }),
     );
   };
@@ -50,13 +57,6 @@ const TodoContainer = () => {
     const temp = JSON.stringify(todos);
     localStorage.setItem('todos', temp);
   }, [todos]);
-
-  function getInitialTodos() {
-    // getting stored items
-    const temp = localStorage.getItem('todos');
-    const savedTodos = JSON.parse(temp);
-    return savedTodos || [];
-  }
 
   return (
     <div className="container">

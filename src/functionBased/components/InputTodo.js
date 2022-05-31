@@ -14,9 +14,11 @@ const InputTodo = (props) => {
   };
 
   const handleSubmit = (e) => {
+    const { title } = inputText;
+    const { addTodoProps } = props;
     e.preventDefault();
     if (inputText.title.trim()) {
-      props.addTodoProps(inputText.title);
+      addTodoProps(title);
       setInputText({
         title: '',
       });
@@ -35,7 +37,7 @@ const InputTodo = (props) => {
         name="title"
         onChange={onChange}
       />
-      <button className="input-submit">Submit</button>
+      <button type="button" className="input-submit">Submit</button>
     </form>
   );
 };

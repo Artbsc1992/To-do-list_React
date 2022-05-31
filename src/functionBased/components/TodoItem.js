@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import styles from './TodoItem.module.css';
 
 const TodoItem = (props) => {
@@ -35,7 +36,7 @@ const TodoItem = (props) => {
   useEffect(() => () => {
     console.log('Cleaning up...');
   }, []);
-
+  const { deleteTodoProps, setUpdate, handleChangeProps } = props;
   return (
     <li className={styles.item}>
       <div onDoubleClick={handleEditing} style={viewMode}>
@@ -43,9 +44,9 @@ const TodoItem = (props) => {
           type="checkbox"
           className={styles.checkbox}
           checked={completed}
-          onChange={() => props.handleChangeProps(id)}
+          onChange={() => handleChangeProps(id)}
         />
-        <button onClick={() => props.deleteTodoProps(id)}>Delete</button>
+        <button type="button" onClick={() => deleteTodoProps(id)}>Delete</button>
         <span style={completed ? completedStyle : null}>{title}</span>
       </div>
       <input
@@ -54,7 +55,7 @@ const TodoItem = (props) => {
         className={styles.textInput}
         value={title}
         onChange={(e) => {
-          props.setUpdate(e.target.value, id);
+          setUpdate(e.target.value, id);
         }}
         onKeyDown={handleUpdatedDone}
       />

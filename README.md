@@ -1,15 +1,15 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Todo list using REACT
 
 > Description the project.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- React
+- CSS
+- Gitflow
 
 ## Live Demo (if available)
 
@@ -18,39 +18,26 @@
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
+- copy this link `https://github.com/artbsc1992/to-do-list_react`.
+- get the directory that you want to clone the repository.
+- open the command prompt in this directory.
+- write `git clone https://github.com/artbsc1992/to-do-list_react`.
+- go to the repository folder in your command prompt `cd to-do-list_react`.
+- run `npm install` to install packages.
+- run `npm start` to run the app.
 
 
 
 ## Authors
 
-👤 **Author1**
+👤 **Arturo**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Artbsc1992](https://github.com/Artbsc1992)
+- Twitter: [@Arturo_D_Rock](https://twitter.com/Arturo_D_Rock)
+- LinkedIn: [Arturo Hermida](https://www.linkedin.com/in/arturo-hermida29/)
 
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 

@@ -22,8 +22,6 @@ const TodoItem = (props) => {
     textDecoration: 'line-through',
   };
 
-  const { completed, id, title } = props.todo;
-
   const viewMode = {};
   const editMode = {};
 
@@ -36,7 +34,10 @@ const TodoItem = (props) => {
   useEffect(() => () => {
     console.log('Cleaning up...');
   }, []);
-  const { deleteTodoProps, setUpdate, handleChangeProps } = props;
+  const {
+    deleteTodoProps, setUpdate, handleChangeProps, todo,
+  } = props;
+  const { completed, id, title } = todo;
   return (
     <li className={styles.item}>
       <div onDoubleClick={handleEditing} style={viewMode}>
@@ -61,6 +62,17 @@ const TodoItem = (props) => {
       />
     </li>
   );
+};
+
+TodoItem.propTypes = {
+  todo: PropTypes.shape({
+    completed: PropTypes.bool.isRequired,
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }).isRequired,
+  deleteTodoProps: PropTypes.func.isRequired,
+  setUpdate: PropTypes.func.isRequired,
+  handleChangeProps: PropTypes.func.isRequired,
 };
 
 export default TodoItem;

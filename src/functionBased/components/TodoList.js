@@ -21,4 +21,15 @@ const TodosList = (props) => {
   );
 };
 
+TodosList.propTypes = {
+  todos: PropTypes.arrayOf(PropTypes.shape({
+    completed: PropTypes.bool.isRequired,
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  })).isRequired,
+  deleteTodoProps: PropTypes.func.isRequired,
+  setUpdate: PropTypes.func.isRequired,
+  handleChangeProps: PropTypes.func.isRequired,
+};
+
 export default TodosList;
